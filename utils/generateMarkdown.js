@@ -39,14 +39,14 @@ This project is protected under the ${data.license}.
 
 ${data.contribution}
 
-##Tests
+## Tests
 
 To run tests, run the following command:
 \`\`\`
 ${data.runTest}
 \`\`\`
 
-##Questions
+## Questions
 
 If you have any questions about the repo, open an issue or contact ${data.gitUser} directly at ${data.email}.
 
