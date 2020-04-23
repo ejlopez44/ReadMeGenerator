@@ -3,14 +3,19 @@ const fs = require("fs");
 const util = require("util");
 const genMarkDown = require('./utils/generateMarkdown.js')
 
-// const writeFileAsync = util.promisify(fs.writeFile);
+const writeFileAsync = util.promisify(fs.writeFile);
 
 function promptUser() {
     return inquirer.prompt([
         {
             type: "input",
-            name: "gitName",
+            name: "gitUser",
             message: 'What is your GitHub username?'
+        },
+        {
+            type: "input",
+            name: "email",
+            message: 'What is your email?'
         },
         {
             type: "input",
@@ -19,7 +24,7 @@ function promptUser() {
         },
         {
             type: "input",
-            name: "projName",
+            name: "title",
             message: 'What is your project\'s name?'
         },
         {
@@ -28,14 +33,22 @@ function promptUser() {
             message: 'Please write a short description of your project'
         },
         {
+            type: "list",
+            name: "license",
+            message: 'What kind of license should your project have?',
+            choices: ["MIT", 'APACHE 2.0', 'GPL 3.0', 'BSD 3.0', 'None']
+        },
+        {
             type: "input",
             name: "runInstall",
-            message: 'What command should be run to install dependencies?'
+            message: 'What command should be run to install dependencies?',
+            default: "npm install",
         },
         {
             type: "input",
             name: "runTest",
-            message: 'What command should be run to run tests?'
+            message: 'What command should be run to run tests?',
+            default: "npm test",
         },
         {
             type: "input",
@@ -51,16 +64,19 @@ function promptUser() {
 }
 
 
-// function writeToFile(fileName, data) {
-//     fs.writeFileSync('README.md', readme)
-// }
+function writeToFile(fileName, data) {
+    writeFileAsync(fileName, data)
+}
 
 async function init() {
     try {
         const answers = await promptUser();
         console.log(answers)
-        // const readme = generateMarkdown(answers)
-        // await writeToFile()
+        const readme = genMarkDown(answers)
+
+        await writeToFile('README.md', readme)
+
+        console.log("Successfully created README.md");
     } catch (err) {
         console.log(err)
     }
