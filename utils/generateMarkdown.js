@@ -1,8 +1,18 @@
+function kabobCase(license) {
+  const licenseCase = license.split(' ').join('%20')
+  return licenseCase
+}
+
 function generateMarkdown(data) {
+
+  let licenseName = (kabobCase(data.license))
+
   return `
 # ${data.title}
 
 ## Description
+
+${data.gitURL}
 
 ${data.desc}
 
@@ -33,7 +43,7 @@ ${data.instructions}
 
 ## License
 
-This project is protected under the ${data.license}.
+This project is protected under the ![GitHub license](https://img.shields.io/badge/license-${licenseName}-blue.svg)
 
 ## Contributing
 

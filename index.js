@@ -5,6 +5,7 @@ const genMarkDown = require('./utils/generateMarkdown.js')
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
+
 function promptUser() {
     return inquirer.prompt([
         {
@@ -71,7 +72,7 @@ function writeToFile(fileName, data) {
 async function init() {
     try {
         const answers = await promptUser();
-        console.log(answers)
+        console.log(answers.gitURL)
         const readme = genMarkDown(answers)
 
         await writeToFile('README.md', readme)
