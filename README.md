@@ -34,7 +34,7 @@ Run with Node and go through the prompts
 
 ## License
 
-This project is protected under the ![GitHub license](https://img.shields.io/badge/license-GPL%203.0-blue.svg)
+![GitHub license](https://img.shields.io/badge/license-GPL%203.0-blue.svg)
 
 ## Contributing
 
