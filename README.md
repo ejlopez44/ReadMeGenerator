@@ -3,7 +3,9 @@
 
 ## Description
 
-It is designed to magically format a readme for a project
+github.com/ejlopez44/ReadMeGenerator
+
+It is designed to magically format a readme.md file for a project.
 
 ## Table of Contents
 
@@ -28,24 +30,24 @@ npm install
 
 ## Usage
 
-Simply run through the prompts through the terminal and a Readme file will appear in your working directory.
+Run with Node and go through the prompts
 
 ## License
 
-This project is protected under the None.
+This project is protected under the [![GitHub license](https://img.shields.io/badge/license-GPL%203.0-blue.svg)]
 
 ## Contributing
 
 Nothing.
 
-##Tests
+## Tests
 
 To run tests, run the following command:
 ```
 npm test
 ```
 
-##Questions
+## Questions
 
 If you have any questions about the repo, open an issue or contact ejlopez44 directly at titolopez44@yahoo.com.
 
